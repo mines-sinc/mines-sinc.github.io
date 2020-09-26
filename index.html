@@ -203,48 +203,6 @@
             function getAppId() {
                 return document.getElementById("app-id-input").value;
             }
-
-            function customEndSession(){
-
-                console.log("Custom end session clicked");
-                appstreamEmbed.endSession();
-
-            }
-
-            function customerLaunchAppSwitcher(){
-                console.log("Custom launch app switcher clicked");
-                appstreamEmbed.launchAppSwitcher();
-            }
-
-            function customGetSessionState(){
-                console.log("Custom get session state clicked");
-                console.log(appstreamEmbed.getSessionState());
-
-            }
-
-            function customerGetUserInterfaceState(){
-                console.log("Custom get user interface clicked");
-                console.log(appstreamEmbed.getUserInterfaceState());
-            }
-
-            function customSessionStateChange(e1, e2, e3, e4){
-                console.log("Session state changed");
-                console.log("Function returned: "+e1+", "+e2+", "+e3+", "+e4);
-            }
-
-            function customSessionInterfaceStateChange(e1, e2, e3, e4){
-                console.log("Session interface state changed");
-                console.log("Function returned: "+e1+", "+e2+", "+e3+", "+e4);
-            }
-
-            function customSessionError(e1, e2, e3, e4){
-                console.log("Session error");
-                console.log("Function returned: "+e1+", "+e2+", "+e3+", "+e4);
-            }
-
-            appstreamEmbed.addEventListener(AppStream.Embed.Events.SESSION_STATE_CHANGE, customSessionStateChange);
-            appstreamEmbed.addEventListener(AppStream.Embed.Events.SESSION_INTERFACE_STATE_CHANGE, customSessionInterfaceStateChange);
-            appstreamEmbed.addEventListener(AppStream.Embed.Events.SESSION_ERROR, customSessionError);
         </script>
 
 
@@ -286,13 +244,6 @@
             <br> <br> <br>
         </div>
         <button type="button" onclick="destroyAppStreamFrame()">Destroy Frame</button>
-        <button type="button" onclick="customEndSession()">End session</button>
-        <button type="button" onclick="customerLaunchAppSwitcher()">Launch the App Switcher</button>
-        <button type="button" onclick="customGetSessionState()">Get session State</button>
-        <button type="button" onclick="customerGetUserInterfaceState()">Get user interface state</button>
-
-
-
         
         <!-- Create an empty div for the iframe to be injected -->
         <div id="appstream-container" style="visibility:hidden; width: 640px; height: 525px; margin:auto; min-width: 640px; min-height:525;"> </div>
